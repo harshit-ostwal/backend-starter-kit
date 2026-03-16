@@ -1,0 +1,7 @@
+# Exclude development and non-essential files from the published package
+node_modules/
+.env
+*.log
+
+# The `files` field in package.json controls what gets published.
+# This file exists to suppress the npm gitignore-fallback warning.
