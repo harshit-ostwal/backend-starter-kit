@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { execSync } from "child_process";
-import { existsSync, mkdirSync, cpSync } from "fs";
+import { existsSync, mkdirSync, cpSync, renameSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import ora from "ora";
@@ -60,6 +60,10 @@ async function main() {
   if (projectName !== ".") mkdirSync(projectPath);
   const templateDir = path.join(__dirname, "../template");
   cpSync(templateDir, projectPath, { recursive: true });
+
+  const gitignoreSrc = path.join(projectPath, "gitignore");
+  const gitignoreDest = path.join(projectPath, ".gitignore");
+  if (existsSync(gitignoreSrc)) renameSync(gitignoreSrc, gitignoreDest);
 
   const spinner = ora("Initializing git repository...").start();
   runCommand("git init", { cwd: projectPath });

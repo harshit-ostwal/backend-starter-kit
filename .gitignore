@@ -24,7 +24,7 @@ report.[0-9]*.json
 .env.local
 !.env.example
 !.env.ci
-/template/!.gitignore
+!/template/.gitignore
 
 # caches
 .eslintcache
