@@ -1,0 +1,69 @@
+{
+    "name": "backend",
+    "version": "0.1.0",
+    "description": "Production-ready backend using Bun",
+    "type": "module",
+    "private": true,
+    "license": "MIT",
+    "author": {
+        "name": "Harshit Ostwal",
+        "email": "harshitostwal1234@gmail.com",
+        "url": "https://harshitostwal.com"
+    },
+    "contributors": [
+        {
+            "name": "Harshit Ostwal",
+            "email": "harshitostwal1234@gmail.com",
+            "url": "https://harshitostwal.com"
+        }
+    ],
+    "main": "src/index.js",
+    "module": "src/index.js",
+    "scripts": {
+        "dev": "bun --hot src/index.js",
+        "start": "bun src/index.js",
+        "biome:format": "bunx biome format --write",
+        "biome:lint": "bunx biome lint --write",
+        "biome:check": "bunx biome check --write",
+        "biome:clean": "bunx biome clean",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate dev --name",
+        "prisma:migrate:deploy": "prisma migrate deploy",
+        "prisma:migrate:reset": "prisma migrate reset",
+        "prisma:migrate:status": "prisma migrate status",
+        "prisma:studio": "prisma studio",
+        "prisma:db:push": "prisma db push",
+        "prisma:db:pull": "prisma db pull",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*": [
+            "bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true",
+            "bunx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true",
+            "bunx biome lint --write --no-errors-on-unmatched --files-ignore-unknown=true"
+        ]
+    },
+    "dependencies": {
+        "@prisma/adapter-pg": "^7.3.0",
+        "@prisma/client": "^7.3.0",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.6",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "helmet": "^8.1.0",
+        "jsonwebtoken": "^9.0.3",
+        "morgan": "^1.10.1",
+        "pg": "^8.18.0",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^5.0.1",
+        "uuid": "^13.0.0",
+        "winston": "^3.19.0",
+        "zod": "^4.3.6"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.3.13",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
+        "prisma": "^7.3.0"
+    }
+}

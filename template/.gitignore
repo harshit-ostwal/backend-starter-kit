@@ -1,0 +1,39 @@
+# dependencies
+node_modules
+
+# build output
+out
+dist
+*.tgz
+
+# coverage
+coverage
+*.lcov
+
+# logs
+logs
+*.log
+report.[0-9]*.json
+
+# env
+.env
+.env.*
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+!.env.example
+!.env.ci
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+.bun
+
+# IDE / OS
+.idea
+.DS_Store
+
+# Prisma generated client
+/src/generated/prisma

@@ -1,0 +1,6 @@
+const API_VERSION = "v1";
+const API_PREFIX = `/api/${API_VERSION}`;
+
+const REQUEST_SIZE_LIMIT = "16kb";
+
+export { API_VERSION, API_PREFIX, REQUEST_SIZE_LIMIT };
