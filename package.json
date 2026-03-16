@@ -1,8 +1,8 @@
 {
-    "name": "backend-kit",
+    "name": "backend-starter-kit",
     "version": "1.0.0",
     "bin": {
-        "create-backend-kit": "bin/cli.js"
+        "create-backend-starter-kit": "bin/cli.js"
     },
     "keywords": [
         "backend",
@@ -12,13 +12,13 @@
     "description": "Create backend-powered applications with one command",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/harshit-ostwal/backend-kit.git"
+        "url": "git+https://github.com/harshit-ostwal/backend-starter-kit.git"
     },
-    "homepage": "https://github.com/harshit-ostwal/backend-kit",
+    "homepage": "https://github.com/harshit-ostwal/backend-starter-kit",
     "author": "Harshit Ostwal <codewithharshitjain@gmail.com>",
     "type": "module",
     "bugs": {
-        "url": "https://github.com/harshit-ostwal/backend-kit/issues"
+        "url": "https://github.com/harshit-ostwal/backend-starter-kit/issues"
     },
     "license": "MIT",
     "files": [
