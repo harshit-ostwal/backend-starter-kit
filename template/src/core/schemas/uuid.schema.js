@@ -2,16 +2,10 @@ import z from "zod/v4";
 
 const uuid7Schema = z.uuidv7("Invalid UUID format");
 
-const userIdParamsSchema = z
-  .object({
-    userId: uuid7Schema,
-  })
-  .strict();
+const createUuidSchema = (name) => {
+    return z.object({
+        [name]: uuid7Schema,
+    });
+};
 
-const idParamsSchema = z
-  .object({
-    id: uuid7Schema,
-  })
-  .strict();
-
-export { userIdParamsSchema, idParamsSchema, uuid7Schema };
+export { createUuidSchema, uuid7Schema };

@@ -10,29 +10,21 @@ const router = createRouter();
 router.use("/docs", swaggerUi.serve, swaggerUi.setup(specs, theme));
 
 /**
- * @swagger
- * /:
- *   get:
- *     summary: Welcome message
- *     description: Welcome message for the API service
- *     tags:
- *       - System
- *     responses:
- *       200:
- *         description: Welcome message
- *         content:
- *           application/json:
- *             example:
- *               status: success
- *               message: Welcome to the ${APP_NAME} API service
- *               data: null
+ * @route GET /
+ * @desc  Welcome message for the API
+ * @access Public
  */
 router.get("/", (_, res) => {
-    return ApiResponse.ok(null, `Welcome to the ${APP_NAME} API Service`).send(
-        res
-    );
+  return ApiResponse.ok(null, `Welcome to the ${APP_NAME} API Service`).send(
+    res,
+  );
 });
 
+/**
+ * @route GET /health *
+ * @desc  Health check endpoint
+ * @access Public
+ */
 router.use("/health", healthRoute);
 
 export default router;

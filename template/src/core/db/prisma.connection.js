@@ -17,7 +17,7 @@ class PrismaConnection {
 
       logger.info("✅ Successfully connected to the database.");
     } catch (error) {
-      logger.error("❌ Database connection failed:", error);
+      logger.error("❌ Database connection failed.");
       throw ApiError.badGateway("Failed to connect to the database.", [error]);
     }
   }
@@ -28,7 +28,7 @@ class PrismaConnection {
       await this.prisma.$disconnect();
       logger.info("✅ Successfully disconnected from the database.");
     } catch (error) {
-      logger.error("❌ Database disconnection failed:", error);
+      logger.error("❌ Database disconnection failed.");
       throw ApiError.badGateway("Failed to disconnect from the database.", [
         error,
       ]);
@@ -43,7 +43,7 @@ class PrismaConnection {
     try {
       return await this.prisma.$transaction(callback);
     } catch (error) {
-      logger.error("❌ Database transaction failed:", error);
+      logger.error("❌ Database transaction failed.");
       throw ApiError.badGateway("Database transaction failed.", [error]);
     }
   }
